@@ -10,5 +10,10 @@
 ### 参考示例
 `com.miao.spring.scheduled.task.ScheduleTest1.test1`
 
+## 后续计划
+1. 通过分布式锁，支持分布式任务调度
+2. 事件实现方式改为spring提供的设计和是心啊
+
+
 
 
