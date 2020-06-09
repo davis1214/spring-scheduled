@@ -1,5 +1,6 @@
 package com.miao.spring.scheduled.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.Trigger;
@@ -20,6 +21,7 @@ import java.util.concurrent.Executors;
  * @Date: Created in 2020/05/19
  */
 @Configuration
+@Slf4j
 public class MiaoScheduledConfig implements SchedulingConfigurer {
 
     @Override
@@ -48,7 +50,7 @@ public class MiaoScheduledConfig implements SchedulingConfigurer {
 
                 // String s = trigger2.toString();
             }
-            System.out.println("item = " + item.toString() + " , " + item.getExpression());
+            log.info("item = " + item.toString() + " , " + item.getExpression());
         });
 
         taskRegistrar.setScheduler(Executors.newScheduledThreadPool(corePoolSize));

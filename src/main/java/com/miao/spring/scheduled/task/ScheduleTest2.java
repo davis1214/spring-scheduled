@@ -1,5 +1,6 @@
 package com.miao.spring.scheduled.task;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.support.CronSequenceGenerator;
 import org.springframework.stereotype.Component;
@@ -8,12 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Component
+@Slf4j
 public class ScheduleTest2 {
 
     @Scheduled(cron = "*/20 * * * * ?")
-    public void test1() {
-
-        System.out.println("test2 执行");
+    public void test2() {
+        log.info("test2 执行 - start");
 
         String cron = "*/20 * * * * ?";  //每10分钟执行一次
         CronSequenceGenerator cronSequenceGenerator = new CronSequenceGenerator(cron);
@@ -24,10 +25,8 @@ public class ScheduleTest2 {
         String time = sdf.format(currentTime);
         String nextTime = sdf.format(nextTimePoint);
         String nextDoubleTme = sdf.format(nextNextTimePoint);
-        System.out.println("test2 执行 - 当前系统时间为：" + time);
-        System.out.println("test2 执行下次执行时间为:" + nextTime);
-        System.out.println("test2 执行下下次执行时间为：" + nextDoubleTme);
-        System.out.println("\n");
+
+        log.info("test2 执行 - 当前系统时间为：" + time + " , 执行下次执行时间为：" + nextTime + ", 执行下下次执行时间为：" + nextDoubleTme);
 
 
     }

@@ -48,10 +48,10 @@ public class MiaoScheduledMethodRunnable implements Runnable {
     public void run() {
         try {
             String task = this.getMethod().getDeclaringClass().getName() + "." + this.getMethod().getName();
-            System.out.println(String.format("scheduled task %s start", task));
+            log.info(String.format("scheduled task %s start", task));
             ReflectionUtils.makeAccessible(this.method);
             this.method.invoke(this.target);
-            System.out.println(String.format("scheduled task %s end", task));
+            log.info(String.format("scheduled task %s end", task));
 
             ScheduledEvent scheduledEvent = new ScheduledEvent();
             scheduledEvent.setTaskName(task);

@@ -14,6 +14,6 @@
 1. 通过分布式锁，支持分布式任务调度
 2. ~~事件实现方式改为spring提供的设计和是心啊~~
 3. 增加sofa-tracer的支持（链路跟踪能力）
-
+4. 自定义并扩展spring sheduled的sofa-tracer能力
 
 
