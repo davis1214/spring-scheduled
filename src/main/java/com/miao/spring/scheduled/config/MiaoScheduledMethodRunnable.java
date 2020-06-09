@@ -2,6 +2,7 @@ package com.miao.spring.scheduled.config;
 
 import com.miao.spring.scheduled.event.EventBusCenter;
 import com.miao.spring.scheduled.event.ScheduledEvent;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -16,6 +17,7 @@ import java.util.Date;
  * @Description:
  * @Date: Created in 2020/05/19
  */
+@Slf4j
 public class MiaoScheduledMethodRunnable implements Runnable {
 
     private final Object target;
@@ -41,7 +43,6 @@ public class MiaoScheduledMethodRunnable implements Runnable {
     }
 
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
 
     @Override
     public void run() {

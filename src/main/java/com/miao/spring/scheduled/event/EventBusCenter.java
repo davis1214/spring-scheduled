@@ -2,6 +2,7 @@ package com.miao.spring.scheduled.event;
 
 import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Executors;
 
@@ -11,6 +12,7 @@ import java.util.concurrent.Executors;
  * @Description:
  * @Date: Created in 2020/05/19
  */
+@Slf4j
 public class EventBusCenter {
 
     private final static EventBus eventBus = new AsyncEventBus(Executors.newFixedThreadPool(2));
